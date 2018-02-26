@@ -16,7 +16,7 @@ All the examples utilize authorization tokens which can be generated within an i
 
   <a name="go"></a>
 
-    ```go
+    `
     package main
 
     import (
@@ -46,6 +46,6 @@ All the examples utilize authorization tokens which can be generated within an i
         fmt.Println(string(body))
 
     }
-    ```
+    `
 
 **[⬆ back to top](#table-of-contents)**
