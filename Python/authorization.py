@@ -2,9 +2,11 @@ import http.client
 import json
 
 # Hub Variables
+# Reminder to add 'token ' before the auth token from the Hub
+
 HUB_CONFIG = {
-    'host': 'hubeval74.blackducksoftware.com',
-    'token': 'token MDBjOWU1YjItOWE1OC00YTZiLWE4MzktOTE3MWZiMDg1YzI5OjIyY2Y3YTQzLTYwYTctNGQ1My05NWI5LWFiM2Q1MWRkYWRjZg=='
+    'host': 'huburl.com',
+    'token': ''
 }
 
 # Hub Connect
