@@ -4,7 +4,7 @@
         public $hubHost = "hubtest.com";
         public $authToken = "token ";
 
-        function authorizaHub() {
+        function authorizeHub() {
             $request = new HttpRequest();
             $requestUrl = "https://" . $this->hubHost . "/api/tokens/authenticate";
             $request->setUrl($requestUrl);
@@ -27,6 +27,6 @@
     }
 
     $authorize = new HubAuthorization; 
-    $authorize->authorizaHub()
+    $authorize->authorizeHub()
 
 ?>
