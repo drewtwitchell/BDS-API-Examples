@@ -1,8 +1,8 @@
 <?php
 
     class HubAuthorization {
-        public $hubHost = "hubeval74.blackducksoftware.com";
-        public $authToken = "token MDBjOWU1YjItOWE1OC00YTZiLWE4MzktOTE3MWZiMDg1YzI5OjczNjE1N2Q2LTc3MjEtNDU1ZC05NmQ3LWYwNGJhOThhOWQyYg";
+        public $hubHost = "hubtest.com";
+        public $authToken = "token ";
 
         function authorizaHub() {
             $request = new HttpRequest();
