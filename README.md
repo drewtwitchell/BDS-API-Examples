@@ -164,7 +164,7 @@ All the examples utilize authorization tokens which can be generated within an i
 
 **[⬆ back to top](#table-of-contents)**
 
-## SHELL
+## Shell
 
   <a name="shell"></a>
   
