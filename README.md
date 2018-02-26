@@ -1,3 +1,3 @@
 # BDS-API-Examples
 
-Black Duck Software API Code Examples
+Black Duck Software API Authorization Code Examples
