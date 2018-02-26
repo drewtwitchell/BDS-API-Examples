@@ -16,23 +16,36 @@ All the examples utilize authorization tokens which can be generated within an i
 
   <a name="go"></a>
 
-    - `string`
-    - `number`
-    - `boolean`
-    - `null`
-    - `undefined`
-    - `symbol`
-
-    ```javascript
-    const foo = 1;
-    let bar = foo;
-
-    bar = 9;
-
-    console.log(foo, bar); // => 1, 9
     ```
+    package main
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
+    import (
+        "fmt"
+        "net/http"
+        "io/ioutil"
+    )
 
+    func main() {
+
+        host := "https://hubtest.com"
+
+        url := host + "/api/tokens/authenticate"
+
+        req, _ := http.NewRequest("POST", url, nil)
+
+        // Add 'token ' before inserting the token from the Hub
+        req.Header.Add("authorization", "token ")
+        req.Header.Add("cache-control", "no-cache")
+
+        res, _ := http.DefaultClient.Do(req)
+
+        defer res.Body.Close()
+        body, _ := ioutil.ReadAll(res.Body)
+
+        fmt.Println(res)
+        fmt.Println(string(body))
+
+    }
+    ```
 
 **[⬆ back to top](#table-of-contents)**
