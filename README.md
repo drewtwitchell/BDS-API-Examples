@@ -133,8 +133,8 @@ All the examples utilize authorization tokens which can be generated within an i
     # Reminder to add 'token ' before the auth token from the Hub
 
     HUB_CONFIG = {
-        'host': 'hubeval74.blackducksoftware.com',
-        'token': 'token MDBjOWU1YjItOWE1OC00YTZiLWE4MzktOTE3MWZiMDg1YzI5OjczNjE1N2Q2LTc3MjEtNDU1ZC05NmQ3LWYwNGJhOThhOWQyYg=='
+        'host': 'huburl.com',
+        'token': 'token '
     }
 
     # Hub Connect

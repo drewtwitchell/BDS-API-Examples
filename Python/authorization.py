@@ -5,8 +5,8 @@ import json
 # Reminder to add 'token ' before the auth token from the Hub
 
 HUB_CONFIG = {
-    'host': 'hubtest.com',
-    'token': 'token '
+    'host': 'huburl.com',
+    'token': ''
 }
 
 # Hub Connect
