@@ -16,7 +16,7 @@ All the examples utilize authorization tokens which can be generated within an i
 
   <a name="go"></a>
 
-    ```
+    ```go
     package main
 
     import (
