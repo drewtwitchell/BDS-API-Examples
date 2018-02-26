@@ -23,6 +23,7 @@ class HubAuthorization:
             res = hubConn.getresponse()
             data = res.read().decode('utf-8')
             auth_obj = json.loads(data)
+            # Pass bearer token as auth headers in subsequent requests
             bearerToken = auth_obj['bearerToken']
             print('Hub Authorization Succeeded.')
 
