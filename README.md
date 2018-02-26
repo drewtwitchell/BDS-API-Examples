@@ -163,3 +163,17 @@ All the examples utilize authorization tokens which can be generated within an i
     authorize.authorizeHub()
 
 **[⬆ back to top](#table-of-contents)**
+
+## SHELL
+
+  <a name="shell"></a>
+  
+    #!/bin/bash
+    HUB_HOST="hubtest.com"
+    HUB_AUTH_TOKEN=""
+
+    REQUEST_URL="https://"$HUB_HOST"/api/tokens/authenticate"
+
+    curl --request POST --url $REQUEST_URL --header 'authorization: token '$HUB_AUTH_TOKEN --header 'cache-control: no-cache'
+
+**[⬆ back to top](#table-of-contents)**
