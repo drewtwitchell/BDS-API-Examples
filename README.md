@@ -51,7 +51,7 @@ All the examples utilize authorization tokens which can be generated within an i
 ## JavaScript
 
   <a name="javascript"></a>
-    ```javascript
+
     const request = require('request')
 
     // Reminder to add 'token ' before auth from Hub
@@ -84,5 +84,82 @@ All the examples utilize authorization tokens which can be generated within an i
     }
 
     authorizeHub()
-    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## PHP
+
+  <a name="php"></a>
+  
+    class HubAuthorization {
+        public $hubHost = "hubtest.com";
+        public $authToken = "token ";
+
+        function authorizeHub() {
+            $request = new HttpRequest();
+            $requestUrl = "https://" . $this->hubHost . "/api/tokens/authenticate";
+            $request->setUrl($requestUrl);
+            $request->setMethod(HTTP_METH_POST);
+    
+            $request->setHeaders(array(
+                'authorization' => $authToken,
+                'cache-control' => 'no-cache'
+            ));
+
+            try {
+                $response = $request->send();
+                echo $response->getBody();
+            } catch (HttpException $ex) {
+                echo $ex;
+            }
+
+        }
+
+    }
+
+    $authorize = new HubAuthorization; 
+    $authorize->authorizeHub()
+
+**[⬆ back to top](#table-of-contents)**
+
+## Python
+
+  <a name="python"></a>
+  
+    import http.client
+    import json
+
+    # Hub Variables
+    # Reminder to add 'token ' before the auth token from the Hub
+
+    HUB_CONFIG = {
+        'host': 'hubeval74.blackducksoftware.com',
+        'token': 'token MDBjOWU1YjItOWE1OC00YTZiLWE4MzktOTE3MWZiMDg1YzI5OjczNjE1N2Q2LTc3MjEtNDU1ZC05NmQ3LWYwNGJhOThhOWQyYg=='
+    }
+
+    # Hub Connect
+
+    class HubAuthorization:
+        def authorizeHub(self):
+            try:
+                hubConn = http.client.HTTPSConnection(HUB_CONFIG['host'])
+                headers = {
+                    'authorization': HUB_CONFIG['token'],
+                    'cache-control': 'no-cache'
+                }
+                hubConn.request('POST', '/api/tokens/authenticate', headers=headers)
+                res = hubConn.getresponse()
+                data = res.read().decode('utf-8')
+                auth_obj = json.loads(data)
+                # Pass bearer token as auth headers in subsequent requests
+                bearerToken = auth_obj['bearerToken']
+                print('Hub Authorization Succeeded.')
+
+            except Exception as e:
+                print('Cannot connect to Hub. Invalid token.')
+                print(e)
+
+    authorize = HubAuthorization()
+    authorize.authorizeHub()
+
 **[⬆ back to top](#table-of-contents)**
