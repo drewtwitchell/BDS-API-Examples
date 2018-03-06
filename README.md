@@ -187,10 +187,12 @@ class HubNotifications:
             print(data)
         except Exception as e:
             print(e)
-```
+
         
 notifications = HubNotifications()
 notifications.getNotifications()
+```
+
 
 **[⬆ back to top](#table-of-contents)**
 
