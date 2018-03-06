@@ -163,7 +163,7 @@ All the examples utilize authorization tokens which can be generated within an i
     authorize = HubAuthorization()
     authorize.authorizeHub()
 
-    **GET Request**
+  **GET**
 
     import http.client
     import json
