@@ -127,6 +127,7 @@ All the examples utilize authorization tokens which can be generated within an i
   <a name="python--authorization"></a>
 **Authorization**
 
+```python
 import http.client
 import json
 
@@ -139,7 +140,6 @@ HUB_CONFIG = {
 }
 
 # Hub Connect
-```python
 class HubAuthorization:
     def authorizeHub(self):
         try:
