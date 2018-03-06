@@ -1,6 +1,6 @@
 # BDS-API-Examples
 
-Black Duck Software API Authorization Code Examples
+Black Duck Software API Code Examples
 
 All the examples utilize authorization tokens which can be generated within an instance of the Hub.
 
@@ -124,8 +124,9 @@ All the examples utilize authorization tokens which can be generated within an i
 
 ## Python
 
-  <a name="python"></a>
-  
+  <a name="python--authorization"></a>
+  **Authorization**
+
     import http.client
     import json
 
