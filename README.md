@@ -164,7 +164,7 @@ All the examples utilize authorization tokens which can be generated within an i
     authorize.authorizeHub()
 
   **GET request**
-
+```python
     import http.client
     import json
     import authorization
@@ -185,6 +185,7 @@ All the examples utilize authorization tokens which can be generated within an i
                 print(data)
             except Exception as e:
                 print(e)
+```
         
     notifications = HubNotifications()
     notifications.getNotifications()
