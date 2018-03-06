@@ -155,6 +155,7 @@ class HubAuthorization:
             # Pass bearer token as auth headers in subsequent requests
             bearerToken = auth_obj['bearerToken']
             print('Hub Authorization Succeeded.')
+            return bearerToken
 
         except Exception as e:
             print('Cannot connect to Hub. Invalid token.')
