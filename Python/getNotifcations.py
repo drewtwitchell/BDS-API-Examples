@@ -19,5 +19,5 @@ class HubNotifications:
         except Exception as e:
             print(e)
     
-notifications = HubNotifications()
-notifications.getNotifications()
+#notifications = HubNotifications()
+#notifications.getNotifications()
