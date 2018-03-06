@@ -125,70 +125,72 @@ All the examples utilize authorization tokens which can be generated within an i
 ## Python
 
   <a name="python--authorization"></a>
-  **Authorization**
+**Authorization**
 
-    import http.client
-    import json
+import http.client
+import json
 
-    # Hub Variables
-    # Reminder to add 'token ' before the auth token from the Hub
+# Hub Variables
+# Reminder to add 'token ' before the auth token from the Hub
 
-    HUB_CONFIG = {
-        'host': 'huburl.com',
-        'token': 'token '
-    }
+HUB_CONFIG = {
+    'host': 'huburl.com',
+    'token': 'token '
+}
 
-    # Hub Connect
-
-    class HubAuthorization:
-        def authorizeHub(self):
-            try:
-                hubConn = http.client.HTTPSConnection(HUB_CONFIG['host'])
-                headers = {
-                    'authorization': HUB_CONFIG['token'],
-                    'cache-control': 'no-cache'
-                }
-                hubConn.request('POST', '/api/tokens/authenticate', headers=headers)
-                res = hubConn.getresponse()
-                data = res.read().decode('utf-8')
-                auth_obj = json.loads(data)
-                # Pass bearer token as auth headers in subsequent requests
-                bearerToken = auth_obj['bearerToken']
-                print('Hub Authorization Succeeded.')
-
-            except Exception as e:
-                print('Cannot connect to Hub. Invalid token.')
-                print(e)
-
-    authorize = HubAuthorization()
-    authorize.authorizeHub()
-
-  **GET request**
+# Hub Connect
 ```python
-    import http.client
-    import json
-    import authorization
+class HubAuthorization:
+    def authorizeHub(self):
+        try:
+            hubConn = http.client.HTTPSConnection(HUB_CONFIG['host'])
+            headers = {
+                'authorization': HUB_CONFIG['token'],
+                'cache-control': 'no-cache'
+            }
+            hubConn.request('POST', '/api/tokens/authenticate', headers=headers)
+            res = hubConn.getresponse()
+            data = res.read().decode('utf-8')
+            auth_obj = json.loads(data)
+            # Pass bearer token as auth headers in subsequent requests
+            bearerToken = auth_obj['bearerToken']
+            print('Hub Authorization Succeeded.')
 
-    class HubNotifications:
-        def getNotifications(self):
-            try:
-                authorize = authorization.HubAuthorization()
-                bearerToken = authorize.authorizeHub()          
-                hubConn = http.client.HTTPSConnection(authorization.HUB_CONFIG['host'])
-                headers = {
-                    'authorization': 'bearer ' + bearerToken,
-                    'content-type': 'application/json'
-                }
-                hubConn.request('GET', '/api/projects', headers=headers)
-                res = hubConn.getresponse()
-                data = res.read()
-                print(data)
-            except Exception as e:
-                print(e)
+        except Exception as e:
+            print('Cannot connect to Hub. Invalid token.')
+            print(e)
+
+authorize = HubAuthorization()
+authorize.authorizeHub()
+```
+
+**GET request**
+
+```python
+import http.client
+import json
+import authorization
+
+class HubNotifications:
+    def getNotifications(self):
+        try:
+            authorize = authorization.HubAuthorization()
+            bearerToken = authorize.authorizeHub()          
+            hubConn = http.client.HTTPSConnection(authorization.HUB_CONFIG['host'])
+            headers = {
+                'authorization': 'bearer ' + bearerToken,
+                'content-type': 'application/json'
+            }
+            hubConn.request('GET', '/api/projects', headers=headers)
+            res = hubConn.getresponse()
+            data = res.read()
+            print(data)
+        except Exception as e:
+            print(e)
 ```
         
-    notifications = HubNotifications()
-    notifications.getNotifications()
+notifications = HubNotifications()
+notifications.getNotifications()
 
 **[⬆ back to top](#table-of-contents)**
 
