@@ -209,6 +209,7 @@ For Shell, it is highly recommended that you install jq to deal with the challen
 https://stedolan.github.io/jq/
 
   <a name="shell"></a>
+ **Authorization**
   
     #!/bin/bash
     HUB_HOST="hubtest.com"
