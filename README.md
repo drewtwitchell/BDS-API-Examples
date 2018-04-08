@@ -205,6 +205,7 @@ notifications.getNotifications()
 **[⬆ back to top](#table-of-contents)**
 
 ## Shell
+### For Shell, it is highly recommended that you install jq to deal with the challenges that are introduced when parsing JSON responses. 
 
   <a name="shell"></a>
   
