@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install jq to deal with parsing JSON https://stedolan.github.io/jq/
 HUB_HOST="hubtest.com"
 HUB_AUTH_TOKEN=""
 
