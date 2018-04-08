@@ -206,6 +206,7 @@ notifications.getNotifications()
 
 ## Shell
 For Shell, it is highly recommended that you install jq to deal with the challenges that are introduced when parsing JSON responses. 
+https://stedolan.github.io/jq/
 
   <a name="shell"></a>
   
